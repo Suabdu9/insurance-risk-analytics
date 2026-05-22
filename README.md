@@ -1,18 +1,26 @@
 # Insurance Risk Analytics Project
 
 ## Overview
-This project analyzes insurance policy data to identify risk patterns, profitability trends, and customer behavior using exploratory data analysis (EDA), hypothesis testing, and predictive modeling.
+This project analyzes insurance policy data to identify risk patterns, profitability trends, and customer behavior using:
+- Exploratory Data Analysis (EDA)
+- Statistical hypothesis testing
+- Predictive modeling
+- Data Version Control (DVC) for reproducibility and auditability
+
+The goal is to support risk-based pricing and marketing optimization in an insurance context.
 
 ---
 
 ## Project Structure
 
-```text
 insurance-risk-analytics/
 │
 ├── data/
 │   └── MachineLearningRating_v3/
-│       └── MachineLearningRating_v3.txt
+│       ├── MachineLearningRating_v3.txt
+│       ├── MachineLearningRating_v3.txt.dvc
+│       ├── cleaned_insurance_data.csv
+│       └── cleaned_insurance_data.csv.dvc
 │
 ├── notebooks/
 │   ├── 01_eda.ipynb
@@ -26,93 +34,100 @@ insurance-risk-analytics/
 ├── tests/
 │   └── test_data_loader.py
 │
-├── requirements.txt
 ├── .github/workflows/ci.yml
+├── dvc.yaml
+├── requirements.txt
+├── .gitignore
 └── README.md
-```
 
 ---
 
 ## Setup Instructions
 
-### 1. Clone repository
-
-```bash
+### Clone repository
 git clone <repo-url>
 cd insurance-risk-analytics
-```
 
----
-
-### 2. Create virtual environment
-
-```bash
+### Create virtual environment
 python -m venv venv
-```
 
-Activate:
-
-**Windows**
-
-```bash
+Windows:
 venv\Scripts\activate
-```
 
-**Mac/Linux**
-
-```bash
+Mac/Linux:
 source venv/bin/activate
-```
 
----
-
-### 3. Install dependencies
-
-```bash
+### Install dependencies
 pip install -r requirements.txt
-```
+
+### Run Jupyter Notebook
+python -m notebook
 
 ---
 
-### 4. Launch Jupyter Notebook
+## Data Version Control (DVC)
 
-```bash
-python -m notebook
-```
+pip install dvc
+
+dvc init
+
+dvc add data/MachineLearningRating_v3/MachineLearningRating_v3.txt
+
+dvc add data/cleaned_insurance_data.csv
+
+dvc push
+
+dvc pull
 
 ---
 
 ## Running the Project
 
-Open notebooks in order:
-
-1. `01_eda.ipynb`
-2. `02_hypothesis_testing.ipynb`
-3. `03_modeling.ipynb`
+1. 01_eda.ipynb
+2. 02_hypothesis_testing.ipynb
+3. 03_modeling.ipynb
 
 ---
 
 ## Running Tests
 
-```bash
 pytest
-```
 
 ---
 
 ## Running Lint Checks
 
-```bash
-flake8
-```
+flake8 src tests
 
 ---
 
 ## CI Pipeline
 
-GitHub Actions automatically runs:
+GitHub Actions runs:
+- pytest
+- flake8
 
-- tests
-- lint checks
+on push and pull request to:
+- main
+- task-1
 
-on every push and pull request.
+---
+
+## Key Features
+
+- Loss Ratio & Margin analysis
+- Risk segmentation (Province, Vehicle Type, Gender)
+- Temporal claim trends
+- Outlier detection
+- DVC-based dataset versioning
+- Reproducible ML pipeline
+
+---
+
+## Business Objective
+
+Help AlphaCare Insurance Solutions:
+- Identify low-risk customers
+- Improve pricing strategy
+- Optimize marketing spend
+- Build predictive risk models

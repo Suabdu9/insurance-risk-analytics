@@ -1,10 +1,6 @@
 # virtual env
 venv/
 
-data/
-*.csv
-*.txt
-
 # python cache
 __pycache__/
 *.pyc
@@ -15,9 +11,25 @@ __pycache__/
 # environment
 .env
 
-# dvc
-.dvc/
-*.dvc
-
 # vscode
 .vscode/
+
+# -------------------------
+# DVC RULES (IMPORTANT)
+# -------------------------
+
+# Ignore raw data ONLY if NOT tracked by DVC
+data/*.csv
+data/*.txt
+
+# DO NOT ignore dvc metadata
+!.dvc/
+!.dvc/config
+!.dvcignore
+
+# DVC cache
+.dvc/cache/
+
+# DVC storage  
+dvc-storage/
+.dvc/cache/
