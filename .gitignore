@@ -16,8 +16,7 @@ __pycache__/
 .env
 
 # dvc
-.dvc/
-*.dvc
+.dvc/cache 
 
 # vscode
 .vscode/
