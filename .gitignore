@@ -1,6 +1,10 @@
 # virtual env
 venv/
 
+data/
+*.csv
+*.txt
+
 # python cache
 __pycache__/
 *.pyc
