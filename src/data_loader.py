@@ -1,6 +1,7 @@
 import pandas as pd
 from pathlib import Path
 
+
 def load_data(file_path: str) -> pd.DataFrame:
     try:
         path = Path(file_path)
@@ -25,6 +26,7 @@ def load_data(file_path: str) -> pd.DataFrame:
     except Exception as e:
         print(f"[ERROR] {e}")
         raise
+
 
 def add_derived_metrics(df):
     """
