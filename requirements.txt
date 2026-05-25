@@ -12,3 +12,4 @@ jupyter
 xgboost
 shap
 dvc
+scipy
