@@ -13,3 +13,5 @@ xgboost
 shap
 dvc
 scipy
+shap
+xgboost
